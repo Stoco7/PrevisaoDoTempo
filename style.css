@@ -1,0 +1,83 @@
+/* Estilos gerais */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container principal */
+.weather-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Cabeçalho */
+.header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #555;
+    font-weight: 600;
+}
+
+/* Temperatura */
+.temperature h1 {
+    font-size: 64px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.feels-like {
+    font-size: 16px;
+    color: #777;
+}
+
+/* Detalhes do clima */
+.weather-details {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+}
+
+/* Seções de previsão */
+.forecast h2, .week-forecast h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.hourly1, .hourly2, .weekly{
+    display: flex;
+    flex-direction: row;
+    font-size: 13px;
+}
+
+.hourly1 span,.hourly2 span, .weekly span {
+    width: 45%;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 8px;
+    border-radius: 8px;
+    margin: 5px;
+    font-weight: 600;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 400px) {
+    .weather-container {
+        width: 90%;
+    }
+}
