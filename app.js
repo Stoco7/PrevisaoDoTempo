@@ -67,6 +67,9 @@ function pesquisarCidade() {
 
         // Carregar previsão da cidade digitada
         fetchWeather(cidade.replace(" ", "+"));
+
+        // Limpa o campo de pesquisa
+        document.getElementById("cidade").value = "";
     } else {
         alert("Por favor, insira o nome de uma cidade.");
     }
