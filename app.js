@@ -1,29 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const city = "Americana"; // Cidade padrão
-    const apiUrl = `https://goweather.herokuapp.com/weather/${city}`;
 
-    fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => updateWeather(data))
-        .catch(error => console.error("Erro ao obter os dados:", error));
-});
-
-function updateWeather(data) {
-    // Atualiza temperatura e sensação térmica
-    document.getElementById("temp").innerHTML = data.temperature;
-    document.getElementById("feels-like").innerHTML = `Sensação de ${data.temperature}`;
-
-    // Atualiza umidade e vento
-    document.getElementById("humidity").innerHTML = `<i class="bi bi-moisture"></i> 5%`;
-    document.getElementById("wind").innerHTML = `<i class="bi bi-wind"></i> ${data.wind}`;
-
-    // Atualiza previsão semanal
-    const weeklyForecast = document.getElementById("weekly-forecast");
-    weeklyForecast.innerHTML = ""; // Limpa antes de adicionar os dados
-
-    data.forecast.forEach(day => {
-        const dayElement = document.createElement("span");
-        dayElement.innerHTML = `${day.day} <i class="bi bi-cloud"></i> ${day.temperature}`;
-        weeklyForecast.appendChild(dayElement);
-    });
-}
+            async function fetchWeather() {
+                try {
+                    const response = await fetch("https://goweather.herokuapp.com/weather/americana");
+                    const weatherData = await response.json();
+                    
+                    document.getElementById("temperature").textContent = weatherData.temperature;
+                    document.getElementById("wind").textContent = weatherData.wind;
+                    document.getElementById("description").textContent = weatherData.description;
+                    
+                    const forecastContainer = document.getElementById("forecast");
+                    forecastContainer.innerHTML = "";
+                    
+                    weatherData.forecast.forEach((day, index) => {
+                        const dayElement = document.createElement("div");
+                        dayElement.classList.add("day");
+                        dayElement.innerHTML = `📆 <strong>Dia ${index + 1}:</strong> 🌡️ ${day.temperature}, 💨 ${day.wind}`;
+                        forecastContainer.appendChild(dayElement);
+                    });
+                } catch (error) {
+                    console.error("Erro ao buscar os dados do clima", error);
+                }
+            }
+            
+            fetchWeather();
