@@ -14,7 +14,7 @@
                     weatherData.forecast.forEach((day, index) => {
                         const dayElement = document.createElement("div");
                         dayElement.classList.add("day");
-                        dayElement.innerHTML = `📆 <strong>Dia ${index + 1}:</strong> 🌡️ ${day.temperature}, 💨 ${day.wind}`;
+                        dayElement.innerHTML = `<i class="bi bi-calendar"> <strong>Dia ${index + 1}:</strong> <i class="bi bi-thermometer-half"> ${day.temperature}, <i class="bi bi-wind"></i> ${day.wind}`;
                         forecastContainer.appendChild(dayElement);
                     });
                 } catch (error) {
