@@ -1,44 +1,114 @@
+/* Resetando margens e padding para o body */
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #74ebd5, #acb6e5);
-    color: #333;
-    text-align: center;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    background: linear-gradient(to right,#58b7ee, #88a1db);
+    font-family: 'Arial', sans-serif;
 }
-.container {
-    background: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
+
+.previsao-container {
+    width: 380px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 25px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.previsao-localizacao h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.previsao-localizacao h1 {
+    font-size: 48px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.previsao-localizacao p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.descricao-tempo {
+    margin-top: 20px;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+}
+
+.previsao-dias {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
     width: 100%;
 }
-h2 {
-    font-size: 26px;
-    color: #333;
-    margin-bottom: 15px;
+
+.dia {
+    text-align: center;
 }
-.info {
+
+.dia h4 {
     font-size: 18px;
-    margin: 10px 0;
+    margin-bottom: 5px;
 }
-.forecast {
-    margin-top: 20px;
-}
-.day {
-    background: #f1f1f1;
-    margin: 10px 0;
-    padding: 12px;
-    border-radius: 8px;
+
+.dia p {
     font-size: 16px;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+.day {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 11px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 3px;
+}
+
+/* Quando o usuário passa o mouse sobre o card */
 .day:hover {
-    transform: scale(1.05);
-    background: #e0e0e0;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Estilizando os ícones dentro dos dias */
+.day i {
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+.localizacao{
+    margin-top: 15px;
+    margin-bottom: 30px;
+    display: flex;
+}
+
+.pesquisa{
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+}
+
+.botao{
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+    width: 40px;
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    margin-left: 3px;
 }

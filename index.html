@@ -5,24 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Previsão do Tempo</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="container">
-            <h2>Previsão do Tempo</h2>
-            <p class="info"><i class="bi bi-thermometer-half"></i> Temperatura Atual: <span id="temperature"></span></p>
-            <p class="info"><i class="bi bi-wind"></i> Vento: <span id="wind"></span></p>
-            <p class="info"><i class="bi bi-cloud"></i> Descrição: <span id="description"></span></p>
-            
-            <div class="forecast">
-                <h2>Previsão para os próximos dias:</h2>
-                <div id="forecast"></div>
-            </div>
-        </div> 
-        
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="previsao-container">
+        <!-- Pesquisa de Cidade -->
+        <div class="localizacao">
+            <input type="text" id="cidade" class="pesquisa">
+            <button type="button" class="botao" onclick="pesquisarCidade()"><i class="bi bi-search"></i></button>
+        </div>
+
+        <!-- Previsão para Americana (padrão inicial) -->
+        <!-- Previsão para Americana (padrão inicial) -->
+        <div id="previsao-localizacao" class="previsao-localizacao">
+            <h2 id="cidade-nome"><i class="bi bi-geo-alt"></i> Americana</h2>
+            <h1><span id="temperature-americana"></span> <i class="bi bi-thermometer-sun"></i></h1>
+            <p><strong>Vento:</strong> <span id="wind-americana"></span><i class="bi bi-wind"></i></p>
+            <p><strong>Tempo Atual:</strong> <span id="description-americana"></span><i id="icone-americana"
+                    class="bi"></i></p>
+        </div>
+
+
+        <!-- Previsão para os Próximos Dias -->
+        <div id="forecast-americana" class="previsao-dias"></div>
+    </div>
+
     <script src="app.js"></script>
 </body>
 
