@@ -40,7 +40,7 @@ function fnMudarIcones(description) {
     if (description === "Partly cloudy") {
         iconElement.className = "bi bi-cloud-sun";
     } else if (description === "Sunny") {
-        iconElement.className = "bi bi-sun";
+        iconElement.className ="bi bi-sun";
     } else if (description === "Light rain") {
         iconElement.className = "bi bi-cloud-rain";
     }
